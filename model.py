@@ -11,6 +11,8 @@ from lib.nms.gpu_nms import gpu_nms
 def nms(dets, thresh):
     "Dispatch to either CPU or GPU NMS implementations.\
     Accept dets as tensor"""
+    # TODO: implement nms for cuda tensor - without transfering to cpu.numpy and back to gpu
+    dets = dets.cpu().numpy()
     return gpu_nms(dets, thresh)
 
 model_urls = {
