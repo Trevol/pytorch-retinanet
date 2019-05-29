@@ -208,7 +208,6 @@ class CSVDataset(Dataset):
         sample = {'img': img, 'annot': annot}
         if self.transform:
             sample = self.transform(sample)
-
         return sample
 
     def load_image(self, image_index):
